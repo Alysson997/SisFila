@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_clientes"
+                    android:icon="@drawable/ic_account_multiple"
+                    android:title="Clientes"
+                    android:checked="true"/>
+
+                <item
+                    android:id="@+id/nav_softwares"
+                    android:icon="@drawable/ic_laptop"
+                    android:title="Softwares" />
+
+                <item
+                    android:id="@+id/nav_cidades"
+                    android:icon="@drawable/ic_home_variant"
+                    android:title="Cidades" />
+
+                <item
+                    android:id="@+id/nav_estados"
+                    android:icon="@drawable/ic_city"
+                    android:title="Estados" />
+
+    </group>
+
+    <item android:title="Ações">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_tarefas"
+                android:icon="@drawable/ic_laptop"
+                android:title="Agendar Tarefa" />
+
+        </menu>
+
+    </item>
+
+</menu>

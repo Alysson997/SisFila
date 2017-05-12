@@ -1,0 +1,104 @@
+<resources>
+    <!-- Strings related to login -->
+    <string name="prompt_user">Usuário</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_invalid_email">Esse usuário não é válido</string>
+    <string name="error_invalid_password">Senha muito curta</string>
+    <string name="error_incorrect_password">Senha incorreta</string>
+    <string name="error_field_required">Esse campo é obrigatório</string>
+    <string name="permission_rationale">"Permissões de contatos, são necessarias para completar o email"</string>
+    <string name="txt_checbox_manter_conectado">Manter Conectado?</string>
+
+    <!-- String App -->
+    <string name="app_name">Aplicativo</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_lista_produtos">Lista de Produtos</string>
+    <string name="title_activity_cadastro_cliente">Cadastro Clientes</string>
+    <string name="title_activity_cadastro_produto">Cadastro de Produtos</string>
+    <string name="title_activity_main">Lista de Clientes</string>
+    <string name="title_activity_cadastro_cidade">Cadastro de cidade</string>
+    <string name="title_activity_pesquisa_cidade">Pesquisa de cidade</string>
+
+
+    <!--Strings de Descrição-->
+    <string name="ds_busca">Buscar</string>
+    <string name="ds_add_btn">Adicionar</string>
+    <!--  Strings para o Cadastro de clientes-->
+    <string name="txt_nome_fantasia">Nome Fantasia:</string>
+    <string name="txt_razao_social">Razão Social:</string>
+    <string name="txt_cnpj">CNPJ:</string>
+    <string name="txt_nome">Nome:</string>
+    <string name="txt_endereco">Endereço:</string>
+    <string name="txt_numero">Número:</string>
+    <string name="txt_cidade">Cidade:</string>
+    <string name="txt_bairro">Bairro:</string>
+    <string name="txt_cep">CEP:</string>
+    <string name="txt_telefone">Telefone:</string>
+    <string name="txt_email">Email:</string>
+    <string name="txt_data_cadastro">Data de cadastro:</string>
+    <string name="txt_observacao">Observação:</string>
+    <string name="txt_status">Status:</string>
+    <string name="txt_cadastre_se">Não é um usuário? Cadastre-se</string>
+
+    <!--  Strings para o Cadastro de cidade-->
+    <string name="txt_estado">Estado:</string>
+
+    <string name="hint_nome_fantasia">Digite o nome fantasia</string>
+    <string name="hint_razao_social">Digite o razão social</string>
+    <string name="hint_cnpj">Digite o CNPJ</string>
+    <string name="hint_nome">Digite o nome do proprietario</string>
+    <string name="hint_endereco">Digite o endereço</string>
+    <string name="hint_numero">Digite o número</string>
+    <string name="hint_bairro">Digite o nome do proprietario</string>
+    <string name="hint_cep">Digite o nome do proprietario</string>
+    <string name="hint_telefone">Digite o telefone</string>
+    <string name="hint_email">email@exemplo.com</string>
+    <string name="hint_data_cadastro">dd/MM/yyyy</string>
+    <string name="hint_observacao">Digite uma observação</string>
+
+    <string name="hint_nome_cidade">Digite o nome da cidade</string>
+
+    <string name="hint_busca">Buscar</string>
+    <!--  Strings para o Cadastro de produtos-->
+    <string name="txt_descricao">Descrição</string>
+    <string name="txt_valor_adesao">Valor Adesão</string>
+    <string name="txt_valor_mensalidade">Valor Mensalidade</string>
+    <string name="hint_descricao_produto">Digite a descrição do produto</string>
+    <string name="hint_valor_produto">R$ 00,00</string>
+
+    <string name="txt_uf">UF</string>
+    <string name="hint_uf">Digite a UF do estado</string>
+    <string name="hint_descricao_estado">Digite a descrição do estado</string>
+
+    <string name="lbl_salvar">Salvar</string>
+    <string name="lbl_alterar">Alterar</string>
+    <string name="lbl_excluir">Apagar</string>
+    <string name="entrar">Entrar</string>
+
+    <string name="ttl_icon_add_produto">Adicionar Produtos</string>
+    <string name="ttl_icon_add_cliente">Adicionar Clientes</string>
+    <string name="ttl_icon_list">Lista Clientes</string>
+    <string name="ttl_icon_list_produtos">Lista Produtos</string>
+    <string name="ttl_icon_acount">Minha Conta</string>
+
+    <string name="lbl_pessoa_fisica">Pessoa Fisica</string>
+    <string name="lbl_pessoa_juridica">Pessoa Juridica</string>
+    <string name="title_activity_login">Império Software</string>
+
+    <string name="txt_login">Nome de Usuario</string>
+    <string name="txt_senha">Senha</string>
+    <string name="txt_conect">Manter Conectado?</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="contato">contato@imperiosoftware.com</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="ds_logo">Logo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
