@@ -16,7 +16,7 @@
     <color name="red_CD5C5C">#CD5C5C</color>
     <color name="gray_CDC9C9">#CDC9C9</color>
     <color name="colorBackground">#FFFFFF</color>
-
+    <color name="color_style_green">#00b16a</color>
     <color name="black_overlay">#66000000</color>
 
 </resources>

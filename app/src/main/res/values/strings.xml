@@ -11,6 +11,14 @@
     <string name="permission_rationale">"Permissões de contatos, são necessarias para completar o email"</string>
     <string name="txt_checbox_manter_conectado">Manter Conectado?</string>
 
+    <!-- Strings relacionadas com o cadastro -->
+    <string name="prompt_user_nome">Nome</string>
+    <string name="prompt_user_email">Email</string>
+    <string name="prompt_user_senha">Senha</string>
+    <string name="prompt_user_confirma_senha">Confirmar Senha</string>
+    <string name="action_cadastrar">Cadastrar</string>
+    <string name="txt_cadastrar_se">Cadastre-se!</string>
+
     <!-- String App -->
     <string name="app_name">Aplicativo</string>
     <string name="action_settings">Settings</string>
