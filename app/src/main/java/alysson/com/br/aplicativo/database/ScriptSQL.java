@@ -8,17 +8,36 @@ package alysson.com.br.aplicativo.database;
  */
 public class ScriptSQL{
 
+    public static String getCreateEmpresa(){
+        StringBuilder sqlBuilder = new StringBuilder();
+
+        sqlBuilder.append("CREATE TABLE IF NOT EXISTS EMPRESA( ");
+        sqlBuilder.append("_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
+        sqlBuilder.append("RAZAO_SOCIAL VARCHAR (50), ");
+        sqlBuilder.append("FANTASIA VARCHAR (50), ");
+        sqlBuilder.append("CNPJ VARCHAR (20), ");
+        sqlBuilder.append("EMAIL VARCHAR (50), ");
+        sqlBuilder.append("TELEFONE VARCHAR (15), ");
+        sqlBuilder.append("CEP VARCHAR (15), ");
+        sqlBuilder.append("LOGRADOURO VARCHAR (50) ");
+        sqlBuilder.append(");");
+
+        return sqlBuilder.toString();
+    }
+
     public static String getCreateuUsuario(){
         StringBuilder sqlBuilder = new StringBuilder();
         sqlBuilder.append("CREATE TABLE IF NOT EXISTS USUARIO( ");
         sqlBuilder.append("_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
         sqlBuilder.append("NOME VARCHAR (50), ");
         sqlBuilder.append("EMAIL VARCHAR (50), ");
-        sqlBuilder.append("USERNAME VARCHAR (50), ");
-        sqlBuilder.append("SENHA VARCHAR (30) ");
+        sqlBuilder.append("SENHA VARCHAR (30), ");
+        sqlBuilder.append("EMPRESA_ID INTEGER, ");
+        sqlBuilder.append("FOREIGN KEY(EMPRESA_ID) REFERENCES EMPRESA(_id) ");
         sqlBuilder.append(");");
         return sqlBuilder.toString();
     }
+
     /*
     public static String getCreateCidade(){
         StringBuilder sqlBuilder = new StringBuilder();

@@ -130,8 +130,6 @@
                 android:textColor="@color/colorBackground"
                 />
 
-
-
         </LinearLayout>
 
       </ScrollView>

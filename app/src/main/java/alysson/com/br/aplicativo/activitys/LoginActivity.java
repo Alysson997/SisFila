@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         txtCadastreSe.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), CadastroUsuarioActivity.class));
+                startActivity(new Intent(getApplicationContext(), CadastroEmpresaActivity.class));
             }
         });
 

@@ -20,6 +20,7 @@
         <!-- Activity do Software -->
         <activity
             android:name=".activitys.LoginActivity"
+
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.MainActivicty" />
+
+        <activity android:name=".activitys.MainActivicty" android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".activitys.CadastroUsuarioActivity" />
+
+        <activity android:name=".activitys.CadastroEmpresaActivity"/>
+
+
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -36,7 +44,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".activitys.CadastroUsuarioActivity"></activity>
+
     </application>
 
 </manifest>

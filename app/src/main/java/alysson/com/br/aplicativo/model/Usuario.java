@@ -6,7 +6,9 @@ public class Usuario implements Serializable{
 
     private Long id;
     private String nome;
+    private String email;
     private String senha;
+    private Empresa empresa;
 
     public Long getId() {
         return id;
@@ -24,12 +26,28 @@ public class Usuario implements Serializable{
         this.nome = nome;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getSenha() {
         return senha;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     @Override

@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import alysson.com.br.aplicativo.R;
+import alysson.com.br.aplicativo.model.Empresa;
+import alysson.com.br.aplicativo.model.Usuario;
+import alysson.com.br.aplicativo.repository.UsuarioRepository;
 
 public class CadastroUsuarioActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,6 +23,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     private EditText edtSenha;
     private EditText edtConfirmaSenha;
     private AutoCompleteTextView actEmail;
+    private Empresa empresa;
 
 
     @Override
@@ -35,6 +39,13 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 
         btnCadastrar.setOnClickListener(this);
 
+        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null && bundle.containsKey("EMPRESA")){
+            empresa = (Empresa) bundle.getSerializable("EMPRESA");
+        }
+
     }
 
     @Override
@@ -45,7 +56,6 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
 
             if (TextUtils.isEmpty(edtNome.getText().toString()) || TextUtils.isEmpty(edtSenha.getText().toString()) ||
                     TextUtils.isEmpty(edtConfirmaSenha.getText().toString()) || TextUtils.isEmpty(actEmail.getText().toString())) {
-
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
 
             } else if (! isEmailValid(actEmail.getText().toString())) {
@@ -55,11 +65,18 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
                 Toast.makeText(this, "Senha invalida!", Toast.LENGTH_SHORT).show();
 
             } else{
+                Usuario usuario = new Usuario();
+                usuario.setNome(edtNome.getText().toString());
+                usuario.setEmail(actEmail.getText().toString());
+                usuario.setSenha(edtSenha.getText().toString());
+                usuario.setEmpresa(empresa);
+
+                UsuarioRepository usuarioRepository = new UsuarioRepository(getApplicationContext());
+                usuarioRepository.inserir(usuario);
 
                 //Cadastrar
                 startActivity(new Intent(getApplicationContext(), MainActivicty.class));
             }
-
 
         }
     }
