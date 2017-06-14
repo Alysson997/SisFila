@@ -14,6 +14,7 @@ import android.widget.Toast;
 import alysson.com.br.aplicativo.R;
 import alysson.com.br.aplicativo.model.Empresa;
 import alysson.com.br.aplicativo.model.Usuario;
+import alysson.com.br.aplicativo.repository.EmpresaRepository;
 import alysson.com.br.aplicativo.repository.UsuarioRepository;
 
 public class CadastroUsuarioActivity extends AppCompatActivity implements View.OnClickListener {
@@ -52,23 +53,34 @@ public class CadastroUsuarioActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
 
         if (view == btnCadastrar) {
-            Log.d("DEBUG", "Acionou botão cadastrar");
 
-            if (TextUtils.isEmpty(edtNome.getText().toString()) || TextUtils.isEmpty(edtSenha.getText().toString()) ||
-                    TextUtils.isEmpty(edtConfirmaSenha.getText().toString()) || TextUtils.isEmpty(actEmail.getText().toString())) {
+            String nome = edtNome.getText().toString();
+            String email = actEmail.getText().toString();
+            String senha = edtSenha.getText().toString();
+            String confirmaSenha = edtConfirmaSenha.getText().toString();
+
+            if (TextUtils.isEmpty(nome) || TextUtils.isEmpty(senha) || TextUtils.isEmpty(confirmaSenha) || TextUtils.isEmpty(email)) {
                 Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_SHORT).show();
 
-            } else if (! isEmailValid(actEmail.getText().toString())) {
+            } else if (! isEmailValid(email)) {
                 actEmail.setError("Informe um email válido!");
+                actEmail.requestFocus();
 
-            } else if (! isPasswordValid(edtSenha.getText().toString(), edtConfirmaSenha.getText().toString())) {
+            } else if (! isPasswordValid(senha, confirmaSenha)) {
                 Toast.makeText(this, "Senha invalida!", Toast.LENGTH_SHORT).show();
 
             } else{
+
                 Usuario usuario = new Usuario();
-                usuario.setNome(edtNome.getText().toString());
-                usuario.setEmail(actEmail.getText().toString());
-                usuario.setSenha(edtSenha.getText().toString());
+                usuario.setNome(nome);
+                usuario.setEmail(email);
+                usuario.setSenha(senha);
+
+                EmpresaRepository empresaRepository = new EmpresaRepository(getApplicationContext());
+                empresaRepository.salvar(empresa);
+
+                empresa = empresaRepository.retorneUltimoRegistro();
+
                 usuario.setEmpresa(empresa);
 
                 UsuarioRepository usuarioRepository = new UsuarioRepository(getApplicationContext());

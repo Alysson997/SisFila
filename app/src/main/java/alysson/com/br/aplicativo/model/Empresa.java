@@ -16,6 +16,7 @@ public class Empresa implements Serializable {
     private String telefone;
     private String cep;
     private String logradouro;
+    private String senha;
 
     public Long getId() {
         return id;
@@ -79,6 +80,14 @@ public class Empresa implements Serializable {
 
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     @Override

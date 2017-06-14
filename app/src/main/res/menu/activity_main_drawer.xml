@@ -6,23 +6,23 @@
                 <item
                     android:id="@+id/nav_clientes"
                     android:icon="@drawable/ic_account_multiple"
-                    android:title="Clientes"
+                    android:title="Atendentes"
                     android:checked="true"/>
 
                 <item
                     android:id="@+id/nav_softwares"
                     android:icon="@drawable/ic_laptop"
-                    android:title="Softwares" />
+                    android:title="Tipos de Atendimento" />
 
                 <item
                     android:id="@+id/nav_cidades"
                     android:icon="@drawable/ic_home_variant"
-                    android:title="Cidades" />
+                    android:title="Filas" />
 
                 <item
                     android:id="@+id/nav_estados"
                     android:icon="@drawable/ic_city"
-                    android:title="Estados" />
+                    android:title="Atendimentos" />
 
     </group>
 

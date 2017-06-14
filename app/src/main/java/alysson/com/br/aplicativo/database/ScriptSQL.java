@@ -19,7 +19,8 @@ public class ScriptSQL{
         sqlBuilder.append("EMAIL VARCHAR (50), ");
         sqlBuilder.append("TELEFONE VARCHAR (15), ");
         sqlBuilder.append("CEP VARCHAR (15), ");
-        sqlBuilder.append("LOGRADOURO VARCHAR (50) ");
+        sqlBuilder.append("LOGRADOURO VARCHAR (50), ");
+        sqlBuilder.append("SENHA VARCHAR (30) ");
         sqlBuilder.append(");");
 
         return sqlBuilder.toString();

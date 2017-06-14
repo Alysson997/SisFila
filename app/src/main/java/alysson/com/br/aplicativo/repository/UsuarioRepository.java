@@ -47,7 +47,9 @@ public class UsuarioRepository extends Database<Usuario>{
     public ContentValues preencheContentValues(Usuario usuario){
         ContentValues values = new ContentValues();
         values.put("NOME", usuario.getNome());
+        values.put("EMAIL", usuario.getEmail());
         values.put("SENHA", usuario.getSenha());
+        values.put("EMPRESA_ID", usuario.getEmpresa().getId());
 
         return values;
     }
