@@ -4,23 +4,23 @@
     <group android:checkableBehavior="single">
 
                 <item
-                    android:id="@+id/nav_clientes"
+                    android:id="@+id/nav_atendentes"
                     android:icon="@drawable/ic_account_multiple"
                     android:title="Atendentes"
                     android:checked="true"/>
 
                 <item
-                    android:id="@+id/nav_softwares"
+                    android:id="@+id/nav_tipos_atendimento"
                     android:icon="@drawable/ic_laptop"
                     android:title="Tipos de Atendimento" />
 
                 <item
-                    android:id="@+id/nav_cidades"
+                    android:id="@+id/nav_filas"
                     android:icon="@drawable/ic_home_variant"
                     android:title="Filas" />
 
                 <item
-                    android:id="@+id/nav_estados"
+                    android:id="@+id/nav_atendimentos"
                     android:icon="@drawable/ic_city"
                     android:title="Atendimentos" />
 

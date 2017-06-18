@@ -7,6 +7,7 @@ import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
@@ -18,6 +19,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -64,6 +66,8 @@ public class LoginEmpresaActivity extends AppCompatActivity{
     private View mLoginFormView;
     private TextView txtCadastreSe;
 
+    private Long idEmpresa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,9 +110,7 @@ public class LoginEmpresaActivity extends AppCompatActivity{
         MaskEditTextChangedListener cnpjMask = new MaskEditTextChangedListener("##.###.###/####-##", edtCNPJ);
         edtCNPJ.addTextChangedListener(cnpjMask);
 
-
     }
-
 
     /**
      * Attempts to sign in or register the account specified by the login form.
@@ -230,6 +232,9 @@ public class LoginEmpresaActivity extends AppCompatActivity{
             EmpresaRepository empresaRepository = new EmpresaRepository(getApplicationContext());
             Empresa autenticada = empresaRepository.login(mCNPJ, mPassword);
 
+            if(autenticada != null){
+                idEmpresa = autenticada.getId();
+            }
             return autenticada != null;
         }
 
@@ -238,6 +243,17 @@ public class LoginEmpresaActivity extends AppCompatActivity{
             mAuthTask = null;
 
             if (success){
+
+                SharedPreferences preferences = getSharedPreferences("SISFILA_PREFERENCES", MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+
+                editor.putBoolean("logado", true);
+                editor.putLong("id_empresa", idEmpresa);
+
+                editor.apply();
+                editor.commit();
+
+
                 startActivity(new Intent(getApplicationContext(), MainActivicty.class));
                 finish();
 

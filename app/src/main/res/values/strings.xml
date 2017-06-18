@@ -86,7 +86,7 @@
 
     <string name="txt_uf">UF</string>
     <string name="hint_uf">Digite a UF do estado</string>
-    <string name="hint_descricao_estado">Digite a descrição do estado</string>
+    <string name="hint_descricao">Digite a descrição</string>
 
     <string name="lbl_salvar">Salvar</string>
     <string name="lbl_alterar">Alterar</string>

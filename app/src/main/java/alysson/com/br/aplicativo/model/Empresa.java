@@ -114,4 +114,19 @@ public class Empresa implements Serializable {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "id=" + id +
+                ", razaoSocial='" + razaoSocial + '\'' +
+                ", fantasia='" + fantasia + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", email='" + email + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
+    }
 }

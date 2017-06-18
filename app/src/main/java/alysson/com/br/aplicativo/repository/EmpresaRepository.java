@@ -38,8 +38,6 @@ public class EmpresaRepository extends Database<Empresa>{
 
     @Override
     public void inserir(Empresa empresa){
-        Log.e("DEBUG", empresa.getCnpj());
-        Log.e("DEBUG", empresa.getSenha());
         ContentValues values = preencheContentValues(empresa);
         database.insertOrThrow("EMPRESA", null, values);
     }
@@ -141,6 +139,28 @@ public class EmpresaRepository extends Database<Empresa>{
         }
 
 
+    }
+
+    public Empresa buscarPorID(Long id){
+
+        String query = "SELECT * FROM EMPRESA WHERE _id = '" + id+ "';";
+
+        Cursor cursor = database.rawQuery(query, null);
+
+        Empresa empresa = new Empresa();
+        cursor.moveToFirst();
+
+        empresa.setId(cursor.getLong(cursor.getColumnIndex("_id")));
+        empresa.setRazaoSocial(cursor.getString(cursor.getColumnIndex("RAZAO_SOCIAL")));
+        empresa.setFantasia(cursor.getString(cursor.getColumnIndex("FANTASIA")));
+        empresa.setCnpj(cursor.getString(cursor.getColumnIndex("CNPJ")));
+        empresa.setEmail(cursor.getString(cursor.getColumnIndex("EMAIL")));
+        empresa.setTelefone(cursor.getString(cursor.getColumnIndex("TELEFONE")));
+        empresa.setCep(cursor.getString(cursor.getColumnIndex("CEP")));
+        empresa.setLogradouro(cursor.getString(cursor.getColumnIndex("LOGRADOURO")));
+        empresa.setSenha(cursor.getString(cursor.getColumnIndex("SENHA")));
+
+        return empresa;
     }
 
 }

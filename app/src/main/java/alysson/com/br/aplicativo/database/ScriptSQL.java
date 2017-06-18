@@ -39,6 +39,15 @@ public class ScriptSQL{
         return sqlBuilder.toString();
     }
 
+    public static String getCreateTipoAtendimento(){
+        StringBuilder sqlBuilder = new StringBuilder();
+        sqlBuilder.append("CREATE TABLE IF NOT EXISTS TIPO_ATENDIMENTO( ");
+        sqlBuilder.append("_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
+        sqlBuilder.append("DESCRICAO VARCHAR (50) ");
+        sqlBuilder.append(");");
+        return sqlBuilder.toString();
+    }
+
     /*
     public static String getCreateCidade(){
         StringBuilder sqlBuilder = new StringBuilder();
