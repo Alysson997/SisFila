@@ -43,10 +43,26 @@ public class ScriptSQL{
         StringBuilder sqlBuilder = new StringBuilder();
         sqlBuilder.append("CREATE TABLE IF NOT EXISTS TIPO_ATENDIMENTO( ");
         sqlBuilder.append("_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
-        sqlBuilder.append("DESCRICAO VARCHAR (50) ");
+        sqlBuilder.append("DESCRICAO VARCHAR (50), ");
+        sqlBuilder.append("EMPRESA_ID INTEGER, ");
+        sqlBuilder.append("FOREIGN KEY(EMPRESA_ID) REFERENCES EMPRESA(_id) ");
         sqlBuilder.append(");");
         return sqlBuilder.toString();
     }
+
+    public static String getCreateAtendente(){
+        StringBuilder sqlBuilder = new StringBuilder();
+        sqlBuilder.append("CREATE TABLE IF NOT EXISTS ATENDENTE( ");
+        sqlBuilder.append("_id INTEGER PRIMARY KEY AUTOINCREMENT, ");
+        sqlBuilder.append("NOME VARCHAR (50), ");
+        sqlBuilder.append("SEXO VARCHAR (50), ");
+        sqlBuilder.append("DATA_NASCIMENTO DATE, ");
+        sqlBuilder.append("EMPRESA_ID INTEGER, ");
+        sqlBuilder.append("FOREIGN KEY(EMPRESA_ID) REFERENCES EMPRESA(_id) ");
+        sqlBuilder.append(");");
+        return sqlBuilder.toString();
+    }
+
 
     /*
     public static String getCreateCidade(){

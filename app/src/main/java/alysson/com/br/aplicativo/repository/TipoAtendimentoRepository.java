@@ -52,6 +52,7 @@ public class TipoAtendimentoRepository extends Database<TipoAtendimento>{
     public ContentValues preencheContentValues(TipoAtendimento tipoAtendimento){
         ContentValues values = new ContentValues();
         values.put("DESCRICAO", tipoAtendimento.getDescricao());
+        values.put("EMPRESA_ID", tipoAtendimento.getEmpresa().getId());
 
         return values;
     }
@@ -75,6 +76,35 @@ public class TipoAtendimentoRepository extends Database<TipoAtendimento>{
                 TipoAtendimento tipoAtendimento = new TipoAtendimento();
                 tipoAtendimento.setId(cursor.getLong(cursor.getColumnIndex("_id")));
                 tipoAtendimento.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
+
+                adpLista.add(tipoAtendimento);
+
+            }while(cursor.moveToNext());
+
+        }
+
+        cursor.close();
+        return adpLista;
+    }
+
+    public ArrayAdapter<TipoAtendimento> listarTeste(Context context, Long id){
+        ArrayAdapter<TipoAtendimento> adpLista = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1);
+
+        String query = "SELECT * FROM TIPO_ATENDIMENTO WHERE EMPRESA_ID = '" + id+ "';";
+        Cursor cursor = database.rawQuery(query, null);
+
+        if(cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+
+            do{
+                TipoAtendimento tipoAtendimento = new TipoAtendimento();
+                tipoAtendimento.setId(cursor.getLong(cursor.getColumnIndex("_id")));
+                tipoAtendimento.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
+
+                Empresa empresa = new Empresa();
+                empresa.setId(cursor.getLong(cursor.getColumnIndex("EMPRESA_ID")));
+
+                tipoAtendimento.setEmpresa(empresa);
 
                 adpLista.add(tipoAtendimento);
 

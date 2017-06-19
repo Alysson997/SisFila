@@ -3,15 +3,15 @@
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#0000FF</color>
-    <color name="backgrounddois">#0000FF</color>
+    <color name="colorAccent">#00944a</color>
+    <color name="backgrounddois">#000000</color>
     <color name="branco">#FFFFFF</color>
     <color name="preto">#000000</color>
-    <color name="background">#4169E1</color>
+    <color name="background">#00944a</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="white_FFE1FF">#FFE1FF</color>
-    <color name="deep_skye_blue">#00BFFF</color>
+    <color name="deep_skye_blue">#00b16a</color>
     <color name="red_CD0000">#CD0000</color>
     <color name="red_CD5C5C">#CD5C5C</color>
     <color name="gray_CDC9C9">#CDC9C9</color>

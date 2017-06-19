@@ -24,7 +24,7 @@ public abstract class Database<T> extends SQLiteOpenHelper {
         db.execSQL(ScriptSQL.getCreateEmpresa());
         db.execSQL(ScriptSQL.getCreateuUsuario());
         db.execSQL(ScriptSQL.getCreateTipoAtendimento());
-
+        db.execSQL(ScriptSQL.getCreateAtendente());
     }
 
     @Override

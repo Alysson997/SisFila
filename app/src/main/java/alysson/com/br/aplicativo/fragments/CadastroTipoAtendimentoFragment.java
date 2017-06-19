@@ -1,6 +1,7 @@
 package alysson.com.br.aplicativo.fragments;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +23,11 @@ import android.widget.Toast;
 
 import alysson.com.br.aplicativo.R;
 import alysson.com.br.aplicativo.database.Database;
+import alysson.com.br.aplicativo.model.Empresa;
 import alysson.com.br.aplicativo.model.TipoAtendimento;
 import alysson.com.br.aplicativo.repository.TipoAtendimentoRepository;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class CadastroTipoAtendimentoFragment extends Fragment implements View.OnClickListener {
@@ -44,6 +50,7 @@ public class CadastroTipoAtendimentoFragment extends Fragment implements View.On
         fab.setOnClickListener(this);
 
         edtDescricao = (EditText) rootView.findViewById(R.id.edt_descricao);
+        edtDescricao.requestFocus();
 
         Bundle bundle = getArguments();
 
@@ -53,6 +60,14 @@ public class CadastroTipoAtendimentoFragment extends Fragment implements View.On
 
         } else {
             tipoAtendimento = new TipoAtendimento();
+
+            SharedPreferences preferences =  getActivity().getSharedPreferences("SISFILA_PREFERENCES", MODE_PRIVATE);
+            Long id = preferences.getLong("id_empresa", 1L);
+
+            Empresa empresa = new Empresa();
+            empresa.setId(id);
+
+            tipoAtendimento.setEmpresa(empresa);
         }
 
         return rootView;
@@ -71,6 +86,8 @@ public class CadastroTipoAtendimentoFragment extends Fragment implements View.On
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.main_container, new PesquisaTipoAtendimentoFragment());
                 fragmentTransaction.commit();
+
+                ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Tipos de Atendimento");
 
                 Toast.makeText(getContext(), "Tipo de Atendimento salvo com sucesso!", Toast.LENGTH_LONG).show();
 

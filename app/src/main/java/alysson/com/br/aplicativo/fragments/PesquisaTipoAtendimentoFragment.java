@@ -2,6 +2,7 @@ package alysson.com.br.aplicativo.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ import alysson.com.br.aplicativo.R;
 import alysson.com.br.aplicativo.database.Database;
 import alysson.com.br.aplicativo.model.TipoAtendimento;
 import alysson.com.br.aplicativo.repository.TipoAtendimentoRepository;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class PesquisaTipoAtendimentoFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemClickListener {
@@ -55,7 +58,10 @@ public class PesquisaTipoAtendimentoFragment extends Fragment implements View.On
 
         tipoAtendimentoRepository = new TipoAtendimentoRepository(getContext());
 
-        adpTiposAtendimento = tipoAtendimentoRepository.listar(getContext());
+        SharedPreferences preferences =  getActivity().getSharedPreferences("SISFILA_PREFERENCES", MODE_PRIVATE);
+        Long id = preferences.getLong("id_empresa", 1L);
+
+        adpTiposAtendimento = tipoAtendimentoRepository.listarTeste(getContext(), id);
 
         lstTiposAtendimento.setAdapter(adpTiposAtendimento);
 
@@ -68,7 +74,7 @@ public class PesquisaTipoAtendimentoFragment extends Fragment implements View.On
         fragmentTransaction.replace(R.id.main_container, new CadastroTipoAtendimentoFragment());
         fragmentTransaction.commit();
 
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Cadastro de Tipo de Atendimento");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Editar Tipo de Atendimento");
     }
 
     @Override

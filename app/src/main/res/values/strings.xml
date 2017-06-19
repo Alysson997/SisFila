@@ -28,7 +28,7 @@
     <string name="prompt_empresa_logradouro">Logradouro</string>
 
     <!-- String App -->
-    <string name="app_name">Aplicativo</string>
+    <string name="app_name">SisFila</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_lista_produtos">Lista de Produtos</string>
     <string name="title_activity_cadastro_cliente">Cadastro Clientes</string>
