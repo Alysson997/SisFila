@@ -93,6 +93,11 @@ public class EmpresaRepository extends Database<Empresa>{
         return adpLista;
     }
 
+    @Override
+    public ArrayAdapter<Empresa> listar(Context context, Long id) {
+        return null;
+    }
+
     public Empresa retorneUltimoRegistro(){
         String query = "SELECT * FROM EMPRESA WHERE _id = (SELECT MAX(_id) FROM EMPRESA)";
         Cursor cursor = database.rawQuery(query, null);

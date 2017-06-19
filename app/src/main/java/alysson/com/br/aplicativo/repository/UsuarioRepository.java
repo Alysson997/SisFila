@@ -82,6 +82,11 @@ public class UsuarioRepository extends Database<Usuario>{
         return adpLista;
     }
 
+    @Override
+    public ArrayAdapter<Usuario> listar(Context context, Long id) {
+        return null;
+    }
+
     public Usuario login(Usuario usuario){
         String query = "SELECT * FROM USUARIO WHERE SENHA = " + usuario.getSenha();
         Cursor cursor = database.rawQuery(query, null);

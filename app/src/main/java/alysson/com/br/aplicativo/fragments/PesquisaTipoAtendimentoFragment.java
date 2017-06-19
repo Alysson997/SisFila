@@ -52,7 +52,7 @@ public class PesquisaTipoAtendimentoFragment extends Fragment implements View.On
 
         imgBuscar = (ImageButton) rootView.findViewById(R.id.img_btn_buscar_tipo_atendimento);
         lstTiposAtendimento = (ListView) rootView.findViewById(R.id.lst_tipos_atendimento);
-        edtBusca = (EditText) rootView.findViewById(R.id.edt_busca_estado);
+        edtBusca = (EditText) rootView.findViewById(R.id.edt_busca_tipo_atendimento);
 
         lstTiposAtendimento.setOnItemClickListener(this);
 
@@ -61,8 +61,7 @@ public class PesquisaTipoAtendimentoFragment extends Fragment implements View.On
         SharedPreferences preferences =  getActivity().getSharedPreferences("SISFILA_PREFERENCES", MODE_PRIVATE);
         Long id = preferences.getLong("id_empresa", 1L);
 
-        adpTiposAtendimento = tipoAtendimentoRepository.listarTeste(getContext(), id);
-
+        adpTiposAtendimento = tipoAtendimentoRepository.listar(getContext(), id);
         lstTiposAtendimento.setAdapter(adpTiposAtendimento);
 
         return rootView;

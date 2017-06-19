@@ -38,6 +38,7 @@ public abstract class Database<T> extends SQLiteOpenHelper {
     public abstract void excluir(Long id);
     public abstract ContentValues preencheContentValues(T t);
     public abstract ArrayAdapter<T> listar(Context context);
+    public abstract ArrayAdapter<T> listar(Context context, Long id);
 
 }
 

@@ -14,6 +14,7 @@ import android.view.*;
 import android.widget.TextView;
 
 import alysson.com.br.aplicativo.R;
+import alysson.com.br.aplicativo.fragments.PesquisaAtendenteFragment;
 import alysson.com.br.aplicativo.fragments.PesquisaTipoAtendimentoFragment;
 import alysson.com.br.aplicativo.model.Empresa;
 import alysson.com.br.aplicativo.repository.EmpresaRepository;
@@ -27,12 +28,13 @@ public class MainActivicty extends AppCompatActivity implements NavigationView.O
     private TextView txtEmail;
 
     private Empresa empresa;
-    private EmpresaRepository  empresaRepository;
+    private EmpresaRepository empresaRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         /* Instância a toolbar */
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,12 +56,10 @@ public class MainActivicty extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
 
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        //fragmentTransaction.add(R.id.main_container, new PesquisaClienteFragment());
+        fragmentTransaction.add(R.id.main_container, new PesquisaAtendenteFragment());
         fragmentTransaction.commit();
 
-        getSupportActionBar().setTitle("Pesquisa de cliente");
-
-
+        getSupportActionBar().setTitle("Atendentes");
     }
 
     private void configurarUsuario() {
@@ -82,6 +82,7 @@ public class MainActivicty extends AppCompatActivity implements NavigationView.O
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
         } else {
             super.onBackPressed();
         }
@@ -98,12 +99,15 @@ public class MainActivicty extends AppCompatActivity implements NavigationView.O
 
         switch (id){
             case R.id.nav_atendentes:
-                /*fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_container, new PesquisaClienteFragment());
+
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_container, new PesquisaAtendenteFragment());
                 fragmentTransaction.commit();
-                getSupportActionBar().setTitle("Pesquisa de clientes");
+
+                getSupportActionBar().setTitle("Atendentes");
                 item.setChecked(true);
-                drawer.closeDrawers();*/
+                drawer.closeDrawers();
+
                 break;
 
             case R.id.nav_tipos_atendimento:

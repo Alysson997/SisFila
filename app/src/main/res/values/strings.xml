@@ -45,7 +45,6 @@
     <string name="txt_nome_fantasia">Nome Fantasia:</string>
     <string name="txt_razao_social">Razão Social:</string>
     <string name="txt_cnpj">CNPJ:</string>
-    <string name="txt_nome">Nome:</string>
     <string name="txt_endereco">Endereço:</string>
     <string name="txt_numero">Número:</string>
     <string name="txt_cidade">Cidade:</string>
@@ -64,7 +63,7 @@
     <string name="hint_nome_fantasia">Digite o nome fantasia</string>
     <string name="hint_razao_social">Digite o razão social</string>
     <string name="hint_cnpj">Digite o CNPJ</string>
-    <string name="hint_nome">Digite o nome do proprietario</string>
+    <string name="hint_nome">Digite o nome</string>
     <string name="hint_endereco">Digite o endereço</string>
     <string name="hint_numero">Digite o número</string>
     <string name="hint_bairro">Digite o nome do proprietario</string>
@@ -79,6 +78,7 @@
     <string name="hint_busca">Buscar</string>
     <!--  Strings para o Cadastro de produtos-->
     <string name="txt_descricao">Descrição</string>
+    <string name="txt_nome">Nome</string>
     <string name="txt_valor_adesao">Valor Adesão</string>
     <string name="txt_valor_mensalidade">Valor Mensalidade</string>
     <string name="hint_descricao_produto">Digite a descrição do produto</string>
@@ -118,4 +118,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_continuar">Continuar</string>
+    <string name="txt_sexo">Sexo</string>
 </resources>

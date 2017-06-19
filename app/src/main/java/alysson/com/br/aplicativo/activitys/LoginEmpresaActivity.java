@@ -76,8 +76,8 @@ public class LoginEmpresaActivity extends AppCompatActivity{
         // Set up the login form.
         edtCNPJ = (EditText) findViewById(R.id.edt_cnpj_login);
         txtCadastreSe = (TextView) findViewById(R.id.txt_cadastre_se);
-
         edtSenha = (EditText) findViewById(R.id.password);
+
         edtSenha.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -140,7 +140,7 @@ public class LoginEmpresaActivity extends AppCompatActivity{
             cancel = true;
         }
 
-        // Check for a valid email address.
+        // Check for a valid cnpj address.
         if (TextUtils.isEmpty(cnpj)) {
             edtCNPJ.setError(getString(R.string.error_field_required));
             focusView = edtCNPJ;
@@ -171,7 +171,6 @@ public class LoginEmpresaActivity extends AppCompatActivity{
 
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
         return password.length() > 4;
     }
 
@@ -235,6 +234,7 @@ public class LoginEmpresaActivity extends AppCompatActivity{
             if(autenticada != null){
                 idEmpresa = autenticada.getId();
             }
+
             return autenticada != null;
         }
 
@@ -252,7 +252,6 @@ public class LoginEmpresaActivity extends AppCompatActivity{
 
                 editor.apply();
                 editor.commit();
-
 
                 startActivity(new Intent(getApplicationContext(), MainActivicty.class));
                 finish();

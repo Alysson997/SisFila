@@ -87,7 +87,8 @@ public class TipoAtendimentoRepository extends Database<TipoAtendimento>{
         return adpLista;
     }
 
-    public ArrayAdapter<TipoAtendimento> listarTeste(Context context, Long id){
+    @Override
+    public ArrayAdapter<TipoAtendimento> listar(Context context, Long id){
         ArrayAdapter<TipoAtendimento> adpLista = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1);
 
         String query = "SELECT * FROM TIPO_ATENDIMENTO WHERE EMPRESA_ID = '" + id+ "';";

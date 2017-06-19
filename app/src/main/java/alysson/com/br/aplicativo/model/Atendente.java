@@ -3,8 +3,6 @@ package alysson.com.br.aplicativo.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import alysson.com.br.aplicativo.enumarations.Sexo;
-
 /**
  * Created by Alysson on 18/06/2017.
  */
@@ -12,7 +10,8 @@ public class Atendente implements Serializable {
 
     private Long id;
     private String nome;
-    private Sexo sexo;
+    private String email;
+    private String sexo;
     private Date dataNascimento;
     private Empresa empresa;
 
@@ -32,11 +31,11 @@ public class Atendente implements Serializable {
         this.nome = nome;
     }
 
-    public Sexo getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(Sexo sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -54,6 +53,14 @@ public class Atendente implements Serializable {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
